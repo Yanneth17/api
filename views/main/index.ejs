@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <h1>Listado de peliculas</h1>
+
+    <section class="movies">
+        <% for (let movie of movies) { %>
+            <div class="card-movie-home">
+                <div class="card-img-movie-home">
+                     <a href="/movies/detail/<%=movie.id %>">
+                    <img src="#" class="card-img-top-home" alt="Imagen de pelicula"></a>
+                </div>
+                <div class="card-body-home">
+                    <h4>Nombre: <%=movie.title %></h4>
+                    <p class="card-text ">Año: <%=movie.year %></p>
+                </div>
+            </div>
+        <% } %>
+    </section>
+
+    <section class="buttons">
+        <a class="button is-primary" href="/movies/create">Nueva pelicula </a>
+    </section>
+
+
+</body>
+    
+</html>

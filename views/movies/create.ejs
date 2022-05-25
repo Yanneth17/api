@@ -1,0 +1,49 @@
+<%- include('../partials/head') %>
+    <section class="movie-detail">
+        <div class="container form-container">
+            <h1 class="title">Crear una nueva pelicula</h1>
+
+            <form class="form_container_movies" action="/movies/store" method="POST" enctype="multipart/form-data"> 
+                
+                <div class="container_movies">
+
+                    <div class="form_group_movies">
+                        <label for="title" class="form_label">Titulo: <sup>*</sup></label>
+                        <input type="text" id="name" name="title" class="form_input" placeholder=" "
+                        value="<%=locals.oldData ? oldData.title : ''%>">
+                        <% if (locals.errors && errors.title) { %>
+                            <div class="text-danger">
+                            <%= errors.title.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+    
+                    <div class="form_container_movies">
+                        <label for="text" class="form-label">Descripción:</label>
+                        <textarea name="description" id="description" class="form-input"
+                        value="<%= locals.oldData ? oldData.description: '' %>"></textarea>
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="text-danger">
+                            <%= errors.description.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+
+                    <div class="form_container_movies">
+                        <label for="number" class="form_label">Año: <sup>*</sup></label>
+                        <input type="text" id="year" name="year" class="form_input" placeholder=" "
+                        value="<%= locals.oldData ? oldData.year: '' %>">
+                        <% if (locals.errors && errors.year) { %>
+                            <div class="text-danger">
+                            <%= errors.year.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+
+                    <input class="form_movies_input" type="submit" value="Crear"></input>
+                </div>
+        </form>
+
+        </div>
+</section>
+<%- include('../partials/footer') %>

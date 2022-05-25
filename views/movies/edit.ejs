@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+    <section class="movie-detail">
+        <div class="container form-container">
+            <h1 class="title">Editar pelicula</h1>
+
+            <form id="editmovie"  action="/movies/edit/<%= movie.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="row movie-detail">
+                    <div class="div_editar_movies">
+                        <label for="text" class="form-label">Titulo de la pelicula:</label>
+                        <input type="text" id="title" name="title" value="<%=movie.title%>" class="form-input">
+                    </div>
+                    <div class="div_editar_movies">
+                        <label for="description" class="form-label">Descripción:</label>
+                        <textarea name="description" id="description" value="<%=movie.description%>" class="form-input"></textarea>
+                    </div>
+                    <div class="div_editar_movies">
+                        <label for="number" class="form-label">Año:</label>
+                        <input type="number" id="year" name="year" value="<%=movie.year %>" class="form-input">
+                    </div>
+                    <hr>
+                    <p class="buttons">
+                        <a class="button" href="/movies/detail/<%= movie.id %>">&larr; Volver al detalle</a>
+                        <button type="submit" class="button is-primary">Guardar pelicula</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+<%- include('../partials/footer') %>

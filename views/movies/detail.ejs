@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+    <h1>Detalle de una pelicula</h1>
+    <div>
+        <h2 style="color: rgb(4, 136, 44) ;"><%=movie.title%> </h2>
+        <h3 style="color: rgb(16, 112, 107) ;"><%=movie.year%> </h3>
+        <p style="color: rgb(1, 44, 14) ;"><%=movie.description%> </p>
+    </div>
+    <section class="buttons">
+        <a class="button" href="/movies/">&larr; Volver al listado</a>
+        <br>
+        <br>
+        <a class="button is-primary" href="/movies/edit/<%= movie.id %>">Editar pelicula</a>
+        <br>
+        <form class="has-buttons" action="/movies/delete/<%= movie.id %>?_method=DELETE" method="POST">
+            <button class="button is-danger" type="submit">Eliminar pelicula</button>
+        </form>
+        
+        
+    </section>
+<%- include('../partials/footer') %>
